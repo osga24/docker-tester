@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "${1}" = "build" ]
+then
+	docker build -t test .
+
+	docker run --name test -it test
+
+elif [ "${1}" = "remove" ]
+then
+	docker rm test
+	docker rmi test
+else
+	echo "USE build or remove"
+fi
+
