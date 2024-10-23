@@ -5,7 +5,9 @@ then
 	docker build -t test .
 
 	docker run --name test -it test
-
+elif [ "${1}" = "install" ]
+then
+	sudo apt install docker.io
 elif [ "${1}" = "remove" ]
 then
 	docker rm test
